@@ -64,3 +64,16 @@ def loginFacebook():
         turnOfNotifications.click()
     except Exception as error:
         print("Houve um erro para clicar no botão de desativar notificações! Erro: " + error)
+
+    time.sleep(2)
+
+def goToLink(postLink):
+    from pyautogui import hotkey
+    from pyautogui import write
+    from pyautogui import press
+
+    hotkey("ctrl", "t")
+
+    write(postLink)
+
+    press("enter")
