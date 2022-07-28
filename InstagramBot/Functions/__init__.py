@@ -4,11 +4,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 def setUserInformations(username, password):
+    """
+    Esta função irá 'setar' as informações do usuário para login.
+    """
+    
     global usernameLogin, passwordLogin
     usernameLogin = username
     passwordLogin = password
 
 def iniciarNavegador():
+    """
+    Esta função irá inicializar o navegador Google Chrome Browser.
+    """
+    
     global driver
     driver = webdriver.Chrome(executable_path="InstagramBot/chromedriver.exe")
     driver.get("https://www.instagram.com/accounts/login/")
@@ -16,6 +24,10 @@ def iniciarNavegador():
     time.sleep(3)
 
 def loginFacebook():
+    """
+    Esta função irá realizar o login do usuário pelo Facebook.
+    """
+    
     try:
         botaoLogin = driver.find_element(By.XPATH, "/html/body/div[1]/section/main/div/div/div[1]/div[2]/form/div/div[5]/button/span[2]")
         botaoLogin.click()
