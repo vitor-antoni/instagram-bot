@@ -25,18 +25,30 @@ def loginFacebook():
 
     time.sleep(2)
 
-    inputUsername = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[1]/input").send_keys(usernameLogin)
+    try:
+        inputUsername = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[1]/input").send_keys(usernameLogin)
+    except Exception as error:
+        print("Houve um erro para digitar o nome/email do usuário! Erro: " + error)
 
     time.sleep(0.5)
 
-    inputPassword = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[2]/input").send_keys(passwordLogin)
-
+    try:
+        inputPassword = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[2]/input").send_keys(passwordLogin)
+    except Exception as error:
+        print("Houve um erro para digitar a senha do usuário! Error: " + error)
+    
     time.sleep(1)
 
-    joinAccount = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[3]/button")
-    joinAccount.click()
+    try:
+        joinAccount = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[3]/button")
+        joinAccount.click()
+    except Exception as error:
+        print("Houve um erro para clicar no botão de Entrar! Erro: " + error)
 
     time.sleep(12)
 
-    turnOfNotifications = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/button[2]")
-    turnOfNotifications.click()
+    try:
+        turnOfNotifications = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/button[2]")
+        turnOfNotifications.click()
+    except Exception as error:
+        print("Houve um erro para clicar no botão de desativar notificações! Erro: " + error)
