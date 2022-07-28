@@ -40,14 +40,14 @@ def loginFacebook():
     try:
         inputUsername = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[1]/input").send_keys(usernameLogin)
     except Exception as error:
-        print("Houve um erro para digitar o nome/email do usuário! Erro: " + error)
+        print("Houve um erro para digitar o nome/email do usuário! Erro: ", error)
 
     time.sleep(0.5)
 
     try:
         inputPassword = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[2]/input").send_keys(passwordLogin)
     except Exception as error:
-        print("Houve um erro para digitar a senha do usuário! Error: " + error)
+        print("Houve um erro para digitar a senha do usuário! Error: ", error)
     
     time.sleep(1)
 
@@ -55,7 +55,7 @@ def loginFacebook():
         joinAccount = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[3]/button")
         joinAccount.click()
     except Exception as error:
-        print("Houve um erro para clicar no botão de Entrar! Erro: " + error)
+        print("Houve um erro para clicar no botão de Entrar! Erro: ", error)
 
     time.sleep(12)
 
@@ -63,7 +63,7 @@ def loginFacebook():
         turnOfNotifications = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/button[2]")
         turnOfNotifications.click()
     except Exception as error:
-        print("Houve um erro para clicar no botão de desativar notificações! Erro: " + error)
+        print("Houve um erro para clicar no botão de desativar notificações! Erro: ", error)
 
     time.sleep(2)
 
