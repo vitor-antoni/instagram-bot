@@ -10,7 +10,7 @@ def setUserInformations(username, password):
 
 def iniciarNavegador():
     global driver
-    driver = webdriver.Chrome(executable_path="C:/Users/vsilv/OneDrive/Documentos/chromedriver.exe")
+    driver = webdriver.Chrome(executable_path="InstagramBot/chromedriver.exe")
     driver.get("https://www.instagram.com/accounts/login/")
 
     time.sleep(3)
