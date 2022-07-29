@@ -16,3 +16,5 @@ Functions.iniciarNavegador()
 Functions.loginFacebook()
 
 Functions.goToLink(postLink)
+
+Functions.createComent()
