@@ -42,14 +42,14 @@ def loginFacebook():
     except Exception as error:
         print("Houve um erro para digitar o nome/email do usuário! Erro: ", error)
 
-    time.sleep(0.5)
+    time.sleep(2.5)
 
     try:
         inputPassword = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[2]/input").send_keys(passwordLogin)
     except Exception as error:
         print("Houve um erro para digitar a senha do usuário! Error: ", error)
     
-    time.sleep(1)
+    time.sleep(2)
 
     try:
         joinAccount = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/form/div/div[3]/button")
@@ -77,3 +77,25 @@ def goToLink(postLink):
     write(postLink)
 
     press("enter")
+
+    time.sleep(4)
+
+def createComent():
+    peopleToTag = ["peopleName"]
+
+    try:
+        escreverComentario = driver.find_element(By.CLASS_NAME, "_ablz _aaoc")
+
+        time.sleep(1.5)
+
+        escreverComentario.send_keys(peopleToTag[1], " Teste com Pyhton")
+    except Exception as error:
+        print("Houve um erro para comentar no post! Error: ", error)
+
+    time.sleep(2.5)
+
+    try:
+        botaoComentar = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[3]/div/form/button/div")
+        botaoComentar.click()
+    except Exception as error:
+        print("Houve um erro para clicar no botão de comentar! Error: ", error)
