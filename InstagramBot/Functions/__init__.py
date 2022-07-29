@@ -87,7 +87,7 @@ def createComent():
         escreverComentario = driver.find_element(By.CLASS_NAME, "_ablz _aaoc")
 
         time.sleep(1.5)
-
+        
         escreverComentario.send_keys(peopleToTag[1], " Teste com Pyhton")
     except Exception as error:
         print("Houve um erro para comentar no post! Error: ", error)
