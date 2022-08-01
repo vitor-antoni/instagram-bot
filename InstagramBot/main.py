@@ -8,7 +8,7 @@ postLink = str("post_link")
 
 Functions.setUserInformations(username, password)
 
-print("Ola, seja bem vindo ao bot de intagram!!")
+print("Hi, welcome to the instagram-bot!!! :D")
 time.sleep(1.5)
 
 Functions.iniciarNavegador()
@@ -19,4 +19,4 @@ Functions.goToLink(postLink)
 
 Functions.createComent()
 
-print("O programa acabou!! :D")
+print("Finished!! :D")
