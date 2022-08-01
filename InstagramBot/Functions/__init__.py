@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 
 def setUserInformations(username, password):
     """
-    Esta função irá 'setar' as informações do usuário para login.
+    This function sets the user's informations for login
     """
     
     global usernameLogin, passwordLogin
@@ -14,7 +14,7 @@ def setUserInformations(username, password):
 
 def iniciarNavegador():
     """
-    Esta função irá inicializar o navegador Google Chrome Browser.
+    This function starts the browser Google Chrome
     """
     
     global driver
@@ -25,7 +25,7 @@ def iniciarNavegador():
 
 def loginFacebook():
     """
-    Esta função irá realizar o login do usuário pelo Facebook.
+    This function do Facebook login
     """
     
     try:
@@ -83,35 +83,35 @@ def goToLink(postLink):
 def createComent():
     import pyautogui
 
-    peopleToTag = ["@peopletoTag"]
+    peopleToTag = ["@peopleToTag"]
 
     for nomes in peopleToTag:
         try:
-            moverParaComentario = pyautogui.moveTo(636, 798)
+            moveToCommentBox = pyautogui.moveTo(636, 798)
             
-            caixaComentario = pyautogui.leftClick()
+            commentBox = pyautogui.leftClick()
 
             time.sleep(2)
 
-            escreverComentario = pyautogui.write(nomes)
+            writeComment = pyautogui.write(nomes)
 
-            time.sleep(2)
+            time.sleep(10)
         except Exception as error:
-            print("Erro para escrever comentário: ", error)
+            print("Had some problem for write the comment: ", error)
 
         try:
-            publicarComentario = pyautogui.moveTo(837, 798)
+            publishComment = pyautogui.moveTo(837, 798)
 
             time.sleep(1.5)
 
-            botaoPublicar = pyautogui.leftClick()
+            publishButton = pyautogui.leftClick()
         except Exception as error:
-            print("Erro para publicar comentário: ", error)
+            print("Had some problem for publish the comment: ", error)
 
         time.sleep(3)
 
-        atualizarPagina = pyautogui.press("f5")
+        refreshPage = pyautogui.press("f5")
 
-        time.sleep(10)
+        time.sleep(25)
 
     pyautogui.hotkey("alt", "f4")
