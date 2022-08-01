@@ -81,21 +81,37 @@ def goToLink(postLink):
     time.sleep(4)
 
 def createComent():
-    peopleToTag = ["peopleName"]
+    import pyautogui
 
-    try:
-        escreverComentario = driver.find_element(By.CLASS_NAME, "_ablz _aaoc")
+    peopleToTag = ["@peopletoTag"]
 
-        time.sleep(1.5)
-        
-        escreverComentario.send_keys(peopleToTag[1], " Teste com Pyhton")
-    except Exception as error:
-        print("Houve um erro para comentar no post! Error: ", error)
+    for nomes in peopleToTag:
+        try:
+            moverParaComentario = pyautogui.moveTo(636, 798)
+            
+            caixaComentario = pyautogui.leftClick()
 
-    time.sleep(2.5)
+            time.sleep(2)
 
-    try:
-        botaoComentar = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[3]/div/form/button/div")
-        botaoComentar.click()
-    except Exception as error:
-        print("Houve um erro para clicar no botão de comentar! Error: ", error)
+            escreverComentario = pyautogui.write(nomes)
+
+            time.sleep(2)
+        except Exception as error:
+            print("Erro para escrever comentário: ", error)
+
+        try:
+            publicarComentario = pyautogui.moveTo(837, 798)
+
+            time.sleep(1.5)
+
+            botaoPublicar = pyautogui.leftClick()
+        except Exception as error:
+            print("Erro para publicar comentário: ", error)
+
+        time.sleep(3)
+
+        atualizarPagina = pyautogui.press("f5")
+
+        time.sleep(10)
+
+    pyautogui.hotkey("alt", "f4")
