@@ -18,3 +18,5 @@ Functions.loginFacebook()
 Functions.goToLink(postLink)
 
 Functions.createComent()
+
+print("O programa acabou!! :D")
